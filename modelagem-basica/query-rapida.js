@@ -15,7 +15,7 @@ const db = new pg.Pool({ connectionString,
 });
 
 async function openConnection() {
-  const result = await pool.query("SELECT 1 + 1 AS soma;");
+  const result = await db.query("SELECT 1 + 1 AS soma;");
   console.log(result.rows);
 
   setTimeout(() => {
